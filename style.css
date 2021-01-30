@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+section {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+    padding: 100px;
+    flex-direction: column;
+    color: white;
+    transition: 0.5s ease-in-out;
+    z-index: 10000000;
+}
+
+.imgHolder {
+    background-color: white;
+}
+.section.active {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -300px;
+    z-index: 100000000;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.travelVid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #03a9f4;
+    mix-blend-mode: overlay;
+}
+
+header, .content, .sci {
+    z-index: 100000;
+}
+
+.content {
+    width: 800px;
+}
+
+.content h1, h2{
+    font-size: 4em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.content h2 {
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+.content p {
+    margin-bottom: 30px;
+    width: 600px;
+    font-size: 15px;
+}
+
+.content a {
+    background: white;
+    color: black;
+    padding: 6px 24px;
+    transition: 0.2s ease-out;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.content a:hover {
+    letter-spacing: 0.5em;
+    transition: 0.2s ease-in;
+}
+
+.sci {
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.sci li {
+    list-style-type: none;
+}
+
+.sci li a img{
+    position: relative;
+    height: 30px;
+    filter: invert(1);
+    transition: ease-out 0.2s;
+}
+
+.sci li a img:hover {
+    transform: translateY(-10px);
+    transition: ease-in 0.1s
+}
+
+.navigation {
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 300px;
+    transition: right 0.4s ease-in-out;
+    z-index: -10000;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    z-index: -10000;
+}
+
+.navigation ul li {
+    list-style-type: none;
+}
+
+.navigation ul li a{
+    color: black;
+}
+
+.navigation a:hover {
+    cursor: pointer;
+    color: #03a9f4;
+}
+
+.navigation.active {
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 10000;
+    /*
+    animation-name: slide-in-right;
+    animation-duration: 0.5s;
+    */
+}
+/*
+@keyframes slide-in-right {
+    0% {
+        padding: 0%;
+    }
+    100% {
+        padding-right: 6.3%;
+    }
+}
+*/
+
+.menu {
+    position: absolute;
+    right: 3%;
+    top: 15%;
+    cursor: pointer;
+    background: url(https://i.ibb.co/HrfVRcx/menu.png);
+    width: 31px;
+    height: 31px;
+    z-index: 10000000;
+}
+
+
+.menu.active{
+    position: absolute;
+    cursor: pointer;
+    background: url(https://i.ibb.co/rt3HybH/close.png);
+    background-repeat: no-repeat;
+    filter: invert(1);
+    width: 36px;
+    height: 36px;
+    z-index: 100000;
+}
+
+.travel {
+    z-index: 100000;
+    padding: 50px;
+}
+
+.travelLocal {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px;
+    padding-bottom: 0px;
+}
+
+.cards {
+    position: relative;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 350px 350px 350px;
+    row-gap: 50px;
+}
+
+.cards img {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.travel h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.travel h2:before {
+    content: '';
+    position: absolute;
+    top: 115.5%;
+    right: 60%;
+    height: 1px;
+    width: 33.2%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.travel h2:after {
+    content: '';
+    position: absolute;
+    top: 115.5%;
+    left: 60%;
+    height: 1px;
+    width: 33.2%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.traAdvTit h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.traAdvTit h2:before {
+    content: '';
+    position: absolute;
+    top: 213%;
+    right: 60%;
+    height: 1.5px;
+    width: 33.2%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.traAdvTit h2:after {
+    content: '';
+    position: absolute;
+    top: 213%;
+    left: 60%;
+    height: 1.5px;
+    width: 33.2%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.subtitle {
+    position: relative;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.cards span {
+    font-weight: 500;
+}
+
+.cards > div img {
+    box-shadow: 0 0 5px #333;
+}
+
+.cards > div img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.imgHolder {
+    padding: 50px;
+}
+
+.swiper-container {
+    height: 450px;
+    margin: 20px auto;
+  }
+
+.swiper-slide img {
+    position: relative;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 500px;
+    width: 100%;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.88em;
+    transition: 0.5s ease-in-out;
+    animation-name: afterhover;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+  @keyframes afterhover {
+      0% {
+        z-index: -100000;
+      }
+      100% {
+        z-index: 100000;
+      }
+  }
+
+  .swiper-slide:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .imgHolder h2 {
+    font-size: 30px;
+  }
+
+  .imgTravel {
+      position: relative;
+      height: 250px;
+      width: 700px;
+      background: url(travel.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      object-fit: contain;
+  }
+  .imgTravel img {
+    height: 300px;
+    width: 600px;
+  }
+
+  .textButton a{
+    padding: 8px 24px;
+    font-size: 22px;
+    color: white;
+    background-color: rgb(0, 29, 0);
+    border-radius: 15px;
+    text-transform: initial;
+  }
+
+  .textButton a:hover {
+      opacity: 0.8;
+      transition: 0.2s
+  }
+
+  .textButton {
+      padding-left: 50px;
+  }
+
+  .advert {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 2.4em;
+      background-color: rgb(247, 247, 230);
+      margin-bottom: 50px;
+  }
+
+  .grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 450px 450px 450px;
+      justify-content: center;
+      grid-gap: 65px;
+      align-items: center;
+      text-align: center;
+  }
+
+  .grid a {
+    color: black;
+  }
+
+  .grid img:first-child {
+      position: relative;
+      object-fit: cover;
+      background-position: contain;
+      height: 250px;
+      width: 450px;
+      margin-bottom: -50px;
+  }
+
+  .grid img:nth-child(2) {
+      position: relative;
+      cursor: pointer;
+      border-radius: 100%;
+      width: 100px;
+      z-index: 100000;
+  }
+
+  .paragraph {
+      margin-top: -65px;
+      background: rgb(247, 247, 230);
+      padding: 80px;
+  }
+
+  .paragraph span, 
+  .paragraph h4,  
+  .paragraph p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -50px;
+    margin-right: -50px;
+    font-size: 1.1em;
+  }
+
+  .paragraph a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+  }
+  .travelAdvice {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    color: black;
+  }
+
+  .timing:hover p {
+    text-decoration: underline;
+  }
+  .transport:hover p {
+    text-decoration: underline;
+  }
+  .tips:hover p {
+    text-decoration: underline;
+  }
+  .customs:hover p {
+    text-decoration: underline;
+  }
+
+  .travelAdvice p {
+      position: relative;
+      color: black;
+  }
+
+  .advice {
+      width: 120px;
+  }
+
+  .transport:hover, .timing:hover, .customs:hover, .tips:hover {
+      border: 3px solid black;
+  }
+
+  .transport, .timing, .customs, .tips {
+    border: 3px solid lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+  }
+  @media (max-width: 900px){
+    .travel h2{
+        font-size: 15px;
+    }
+    .travel h2:before {
+        content: '';
+        position: absolute;
+        top: 115.2%;
+        right: 60%;
+        height: 1px;
+        width: 33.2%;
+        background-color: black;
+        overflow: hidden;
+    }
+    
+    .travel h2:after {
+        content: '';
+        position: absolute;
+        top: 115.2%;
+        left: 60%;
+        height: 1px;
+        width: 33.2%;
+        background-color: black;
+        overflow: hidden;
+    }
+
+    .cards {
+        position: relative;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        grid-template-columns: 350px;
+    }
+
+    .travelLocal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 120px;
+    }
+    .subtitle {
+        width: 400px;
+        margin-top: -10px;
+        margin-bottom: 50px;
+        font-size: 17px;
+    }
+
+    .traAdvTit h2 {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .traAdvTit h2:before {
+        content: '';
+        position: absolute;
+        top: 381.8%;
+        right: 60%;
+        height: 1.5px;
+        width: 33.2%;
+        background-color: black;
+        overflow: hidden;
+    }
+    
+    .traAdvTit h2:after {
+        content: '';
+        position: absolute;
+        top: 381.8%;
+        left: 60%;
+        height: 1.5px;
+        width: 33.2%;
+        background-color: black;
+        overflow: hidden;
+    }
+
+    .travelAdvice {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+        color: black;
+      }
+
+      .advert {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        background-color: rgb(247, 247, 230);
+        margin-bottom: 50px;
+        height: 150px;
+    }
+
+    .textButton a{
+        position: relative;
+        top: 20px;
+        font-size: 1em;
+    }
+
+    .textButton {
+        width: 330px;
+    }
+
+    .imgTravel {
+        width: 330px;
+        height: 150px;
+    }
+    .grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 450px;
+        justify-content: center;
+        grid-gap: 65px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .content {
+        width: 500px;
+        font-size: 10px;
+    }
+
+    .content p {
+        width: 500px;
+    }
+  }
